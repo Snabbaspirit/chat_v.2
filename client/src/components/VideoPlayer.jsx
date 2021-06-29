@@ -27,8 +27,6 @@ const useStyles = makeStyles((theme) => ({
 const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext)
   const classes = useStyles();
-  console.log(myVideo)
-  console.log('stream', stream)  
 
   return (
     <Grid container className={classes.gridContainer}>
@@ -41,7 +39,7 @@ const VideoPlayer = () => {
           </Grid>
         </Paper>
       )}
-      { callAccepted && !callEnded (
+      { callAccepted && !callEnded && (
         <Paper className={classes.paper}>
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{call.name || 'User 2'}</Typography>
